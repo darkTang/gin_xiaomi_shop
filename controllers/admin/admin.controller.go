@@ -8,11 +8,11 @@ import (
 
 func Controller(r *gin.Engine) {
 	adminRouter := r.Group("/admin", middlewares.InitAdminAuthMiddleware)
-
 	var loginService admin.LoginService
 	var managerService admin.ManagerService
 	var focusService admin.FocusService
 	var mainService admin.MainService
+	var roleService admin.RoleService
 	{
 		adminRouter.GET("", mainService.Index)
 		adminRouter.GET("/welcome", mainService.Welcome)
@@ -32,6 +32,13 @@ func Controller(r *gin.Engine) {
 		adminRouter.GET("/focus/add", focusService.Add)
 		adminRouter.GET("/focus/edit", focusService.Edit)
 		adminRouter.GET("/focus/delete", focusService.Delete)
+
+		adminRouter.GET("/role", roleService.Index)
+		adminRouter.GET("/role/add", roleService.Add)
+		adminRouter.POST("/role/doAdd", roleService.DoAdd)
+		adminRouter.GET("/role/edit", roleService.Edit)
+		adminRouter.POST("/role/doEdit", roleService.DoEdit)
+		adminRouter.GET("/role/delete", roleService.Delete)
 
 	}
 }

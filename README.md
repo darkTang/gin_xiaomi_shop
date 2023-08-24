@@ -65,3 +65,9 @@ meta标签用来提供有关html文档的元数据，元数据不会显示给用
 <meta http-equiv="refresh" content="5;url=https://www.baidu.com">
 ```
 
+### 隐藏表单
+隐藏表单在页面上不会显示，但是它可以帮我们把数据传输给后端。
+```html
+<input type="hidden" name="id" value="1" />
+```
+

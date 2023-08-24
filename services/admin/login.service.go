@@ -49,12 +49,12 @@ func (ls LoginService) DoLogin(ctx *gin.Context) {
 			if err != nil {
 				return
 			}
-			ls.success(ctx, "登录成功", "/admin")
+			ls.Success(ctx, "登录成功", "/admin")
 		} else {
-			ls.error(ctx, "用户名或密码错误", "/admin/login")
+			ls.Error(ctx, "用户名或密码错误", "/admin/login")
 		}
 	} else {
-		ls.error(ctx, "验证码验证失败", "/admin/login")
+		ls.Error(ctx, "验证码验证失败", "/admin/login")
 	}
 }
 
@@ -68,7 +68,7 @@ func (ls LoginService) Logout(ctx *gin.Context) {
 	if err != nil {
 		return
 	}
-	ls.success(ctx, "退出登录成功", "/admin/login")
+	ls.Success(ctx, "退出登录成功", "/admin/login")
 }
 
 func (LoginService) GetCaptcha(ctx *gin.Context) {

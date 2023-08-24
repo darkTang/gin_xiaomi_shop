@@ -13,7 +13,7 @@ func (ManagerService) Index(ctx *gin.Context) {
 }
 
 func (ManagerService) Add(ctx *gin.Context) {
-	ctx.HTML(http.StatusOK, "admin/manager/welcome.html", nil)
+	ctx.HTML(http.StatusOK, "admin/manager/add.html", nil)
 }
 
 func (ManagerService) Edit(ctx *gin.Context) {
