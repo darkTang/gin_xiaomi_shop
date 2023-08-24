@@ -13,7 +13,7 @@ func (FocusService) Index(ctx *gin.Context) {
 }
 
 func (FocusService) Add(ctx *gin.Context) {
-	ctx.HTML(http.StatusOK, "admin/focus/welcome.html", nil)
+	ctx.HTML(http.StatusOK, "admin/focus/add.html", nil)
 }
 
 func (FocusService) Edit(ctx *gin.Context) {
