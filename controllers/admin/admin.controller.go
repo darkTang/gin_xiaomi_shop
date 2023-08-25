@@ -25,7 +25,9 @@ func Controller(r *gin.Engine) {
 
 		adminRouter.GET("/manager", managerService.Index)
 		adminRouter.GET("/manager/add", managerService.Add)
+		adminRouter.POST("/manager/doAdd", managerService.DoAdd)
 		adminRouter.GET("/manager/edit", managerService.Edit)
+		adminRouter.POST("/manager/doEdit", managerService.DoEdit)
 		adminRouter.GET("/manager/delete", managerService.Delete)
 
 		adminRouter.GET("/focus", focusService.Index)

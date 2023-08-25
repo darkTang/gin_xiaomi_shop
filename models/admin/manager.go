@@ -7,9 +7,10 @@ type Manager struct {
 	Mobile   string `json:"mobile" gorm:"type:varchar(255)"`
 	Email    string `json:"email" gorm:"type:varchar(255)"`
 	Status   uint8  `json:"status" gorm:"default:1"`
-	RoleId   uint32 `json:"role_id"`
+	RoleId   string `json:"role_id" gorm:"type:tinyint unsigned"`
 	AddTime  uint64 `json:"add_time" gorm:"autoCreateTime:milli"`
-	IsSuper  uint8  `json:"is_super"`
+	IsSuper  uint8  `json:"is_super" gorm:"default:0"`
+	Role     Role   `json:"role" gorm:"foreignKey:RoleId;references:Id"`
 }
 
 func (Manager) TableName() string {

@@ -80,8 +80,8 @@ func (rs RoleService) Delete(ctx *gin.Context) {
 	id := ctx.Query("id")
 	var role admin.Role
 	if err := db.Where("id = ?", id).Delete(&role).Error; err == nil {
-		rs.Success(ctx, "修改角色成功", "/admin/role")
+		rs.Success(ctx, "删除角色成功", "/admin/role")
 	} else {
-		rs.Error(ctx, "修改角色失败", "/admin/role")
+		rs.Error(ctx, "删除角色失败", "/admin/role")
 	}
 }

@@ -1,15 +1,20 @@
 package main
 
 import (
+	"gin_xiaomi_shop/common"
 	"gin_xiaomi_shop/controllers/admin"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
+	"html/template"
 )
 
 func main() {
 	r := gin.Default()
 	r.Static("/static", "./static")
+	r.SetFuncMap(template.FuncMap{
+		"UnixToTime": common.UnixToTime,
+	})
 	r.LoadHTMLGlob("templates/**/**/*")
 
 	store := cookie.NewStore([]byte("secret"))

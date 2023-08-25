@@ -5,12 +5,15 @@ $(function(){
 	})
 })
 
-function confirmDelete(id) {
+function confirmDelete(url) {
 	if (confirm("确定删除吗")) {
-		location.href = `/admin/role/delete?id=${id}`
+		location.href = url
 	}
 }
 
 window.onload = function () {
-	document.getElementById("rightMain").height = window.innerHeight - 80 + 'px'
+	const iframe = document.getElementById("rightMain")
+	if (iframe) {
+		iframe.height = window.innerHeight - 80 + 'px'
+	}
 }
