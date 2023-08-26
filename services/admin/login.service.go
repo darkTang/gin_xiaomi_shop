@@ -3,14 +3,11 @@ package admin
 import (
 	"encoding/json"
 	"gin_xiaomi_shop/common"
-	"gin_xiaomi_shop/database/mysql"
 	"gin_xiaomi_shop/models/admin"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
-
-var db = mysql.DB
 
 type LoginService struct {
 	baseService
@@ -33,7 +30,7 @@ func (ls LoginService) DoLogin(ctx *gin.Context) {
 			// 保存用户信息，cookie或session
 			session := sessions.Default(ctx)
 			session.Options(sessions.Options{
-				MaxAge:   2 * 3600,
+				MaxAge:   24 * 3600,
 				Domain:   "localhost",
 				Path:     "/",
 				Secure:   false,

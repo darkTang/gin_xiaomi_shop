@@ -17,7 +17,7 @@ func init() {
 	if err != nil {
 		return
 	}
-	err := DB.AutoMigrate(&admin.Manager{}, &admin.Role{})
+	err := DB.AutoMigrate(&admin.Manager{}, &admin.Role{}, &admin.Rights{})
 	if err != nil {
 		return
 	}

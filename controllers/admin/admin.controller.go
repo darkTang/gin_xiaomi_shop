@@ -13,6 +13,7 @@ func Controller(r *gin.Engine) {
 	var focusService admin.FocusService
 	var mainService admin.MainService
 	var roleService admin.RoleService
+	var rightsService admin.RightsService
 	{
 		adminRouter.GET("", mainService.Index)
 		adminRouter.GET("/welcome", mainService.Welcome)
@@ -41,6 +42,10 @@ func Controller(r *gin.Engine) {
 		adminRouter.GET("/role/edit", roleService.Edit)
 		adminRouter.POST("/role/doEdit", roleService.DoEdit)
 		adminRouter.GET("/role/delete", roleService.Delete)
+
+		adminRouter.GET("/rights", rightsService.Index)
+		adminRouter.GET("/rights/add", rightsService.Add)
+		adminRouter.POST("/rights/doAdd", rightsService.DoAdd)
 
 	}
 }

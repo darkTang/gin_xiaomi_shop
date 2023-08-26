@@ -4,6 +4,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	"io"
+	"strconv"
 	"time"
 )
 
@@ -18,4 +19,12 @@ func Md5(str string) string {
 func UnixToTime(timestamp uint64) string {
 	t := time.UnixMilli(int64(timestamp))
 	return t.Format("2006-01-02 15:04:05")
+}
+
+func Atoi(str string) int {
+	v, err := strconv.Atoi(str)
+	if err != nil {
+		return 0
+	}
+	return v
 }

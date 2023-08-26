@@ -3825,7 +3825,7 @@ jQuery.fn.extend({
 			i = 0,
 			elem = this[0];
 
-		// Special expections of .data basically thwart jQuery.access,
+		// Special expections of .data basically thwart jQuery.rights,
 		// so implement the relevant behavior ourselves
 
 		// Gets all values
@@ -8758,7 +8758,7 @@ if ( xhrSupported ) {
 									responseHeaders = xhr.getAllResponseHeaders();
 
 									// When requesting binary data, IE6-9 will throw an exception
-									// on any attempt to access responseText (#11426)
+									// on any attempt to rights responseText (#11426)
 									if ( typeof xhr.responseText === "string" ) {
 										responses.text = xhr.responseText;
 									}

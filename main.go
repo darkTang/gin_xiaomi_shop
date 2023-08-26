@@ -12,7 +12,7 @@ import (
 func main() {
 	r := gin.Default()
 	r.Static("/static", "./static")
-	r.SetFuncMap(template.FuncMap{
+	r.SetFuncMap(template.FuncMap{ // 必需要在加载模板之前注入
 		"UnixToTime": common.UnixToTime,
 	})
 	r.LoadHTMLGlob("templates/**/**/*")

@@ -1,9 +1,12 @@
 package admin
 
 import (
+	"gin_xiaomi_shop/database/mysql"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
+
+var db = mysql.DB
 
 type baseService struct {
 }
